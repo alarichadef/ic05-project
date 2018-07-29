@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tests</title>
+	<script type="text/javascript" src="lib/vis.js"></script>
+	<script type="text/javascript" src="lib/vis.css"></script>
+	<script type="text/javascript" src="js/grapher.js"></script>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var g = new Grapher();
+	g.auto();
+
+	g.type('node', {name: 'Person', color: '#FF4545'});
+	g.type('edge', {name: 'Knows', color: '#45FF45'});
+	g.type('edge', {name: 'Loves', color: '#FF4545'});
+
+	var nodes = [{
+		id: 'jo',
+		label: 'Jo'
+	},{
+		id: 'alaric',
+		label: 'Alaric'
+	},{
+		id: 'elisa',
+		label: 'Elisa'
+	}];
+
+	var edges = [{
+		from: 'jo',
+		to: 'alaric',
+		type: 'Knows'
+	}, {
+		from: 'alaric',
+		to: 'elisa',
+		type: 'Loves'
+	}, {
+		from: 'jo',
+		to: 'elisa',
+		type: 'Knows'
+	}];
+
+	g.update({
+		nodes: nodes,
+		edges: edges
+	});
+
+</script>
+</html>
